@@ -19,7 +19,7 @@ header {
     font-weight: bold;
     font-size: 25px;
     letter-spacing: 1.5px;
-    color : #2D2B2B;
+    color : rgba(16, 16, 16, 0.0);;
     -webkit-text-stroke: 1px rgba(162, 213, 198, 0.85);
 }
 
@@ -278,11 +278,6 @@ header nav .box {
     display : inline-block;
 }
 
-header nav a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
-}
-
 header nav a {
     position: relative;
     cursor: pointer;
@@ -310,6 +305,11 @@ header nav a:hover:after {
     left: 100%;
 }
 
+header nav a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: rgba(16, 16, 16, 0.0);
+    -webkit-text-stroke: 1px rgba(162, 213, 198, 0.85);
+}
 
 .languages_ch {
     
