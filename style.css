@@ -278,6 +278,11 @@ header nav .box {
     display : inline-block;
 }
 
+header nav a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
 header nav a {
     position: relative;
     cursor: pointer;
@@ -305,10 +310,6 @@ header nav a:hover:after {
     left: 100%;
 }
 
-header nav a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
-}
 
 .languages_ch {
     
