@@ -21,8 +21,8 @@ header {
     letter-spacing: 1.5px;
     color : #2D2B2B;
     -webkit-text-stroke: 1px rgba(162, 213, 198, 0.85);
-
 }
+
 
 .social-media {
     display: none;
@@ -278,12 +278,12 @@ header nav .box {
     display : inline-block;
 }
 
-header nav span {
+header nav a {
     position: relative;
     cursor: pointer;
 }
 
-header nav span:before {
+header nav a:before {
     content: attr(data-text);
     color : #A2D5C6;
     position: absolute;
@@ -296,13 +296,18 @@ header nav span:before {
 }
 
 
-header nav span:hover:before {
+header nav a:hover:before {
     width : 100%;
 }
 
-header nav span:hover:after {
+header nav a:hover:after {
     width : 0;
     left: 100%;
+}
+
+header nav a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
 }
 
 .languages_ch {
@@ -317,3 +322,4 @@ header nav span:hover:after {
     height : 3000px;
     padding-top: 6vh;
 }
+

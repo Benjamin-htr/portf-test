@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" prefix="og: https://ogp.me/ns#">
+<html lang="en" prefix="og: https://ogp.me/ns#">
     <head>
         <title>Portfolio</title>
         <meta name="robots" content="max-image-preview:large">
@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="./style.css" type="text/css">
         <link rel="stylesheet" href="./timer.css" type="text/css">
         <link rel="icon" type="image/png" href="./assets/icon.png" sizes="32x32"/>
+
         
         
     </head>
@@ -36,7 +37,7 @@
         <header hidden="true" id="scrolling">
             <div class="nav_container">
                 <nav class="languages_ch">
-                    <a href="./index.en.html" data-text='EN'>EN</a>
+                    <a href="./index.en.html" data-text='EN'  class="active">EN</a>
                     <!-- <span data-text='EN'>EN</span> -->
                     <a href="./index.html" data-text='FR'>FR</a>
                     <!-- <span data-text='FR' class = "active">FR</span> -->
@@ -80,7 +81,7 @@
                         <div>New content in :</div>
                         <div>New content in :</div>
                       </div>
-                    <p class = "timer" data-date="Apr 19, 2021 00:00:00"></p>
+                    <p class = "timer en" data-date="Apr 19, 2021 00:00:00"></p>
                     <p>Meanwhile you can visit my other media :</p>
                     <p class = "social-media1">
                         <a href="https://www.linkedin.com/in/benjamin-hautier/">
@@ -99,9 +100,11 @@
         </main>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
         <script src="https://unpkg.com/@barba/core"></script>
+        <script src="https://unpkg.com/@barba/router"></script>
         <script src="./js/navbar.js" async='true'></script>
         <script src="./js/timer.js" async='true'></script>
         <script src="./js/anim.js" async='true'></script>
+        
         
     </body>
 </html>
