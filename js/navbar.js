@@ -286,6 +286,7 @@ function updateline() {
         //console.log('upd pos2',position)
         line2.style.left = position+'px';
         line2.style.width = width+'px';
+        console.log('update')
     };
 }
 

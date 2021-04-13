@@ -42,9 +42,9 @@ barba.init({
     }
 ]
 });
-/* barba.hooks.afterEnter((data) => {
-    console.log("hooks", data)
-}); */
+barba.hooks.afterEnter((data) => {
+    updateline()
+});
 console.log('barba');
 
 
