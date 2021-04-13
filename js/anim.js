@@ -1,3 +1,29 @@
+function contentAnimation() {
+  var tl = gsap.timeline();
+  tl.from(".animate-this", { duration: 1, y: 30, opacity: 0, stagger: 0.4, delay: 0.2 });
+}
+
+function pageTransition() {
+    var tl = gsap.timeline();
+    tl.to(".loading-screen", {
+        duration: 1.2,
+        width: "100%",
+        left: "0%",
+        ease: "Expo.easeInOut",
+    });
+
+    tl.to(".loading-screen", {
+        duration: 1,
+        width: "100%",
+        left: "100%",
+        ease: "Expo.easeInOut",
+        delay: 0.3,
+    });
+	tl.set(".loading-screen", { left: "-100%" });
+	/* tl.call(contentAnimation); */
+	
+}
+
 barba.init({
     requestError: (trigger, action, url, response) => {
       // go to a custom 404 page if the user click on a link that return a 404 response status
@@ -10,22 +36,20 @@ barba.init({
       return false;
     },
     /* debug: true,
-    logLevel: 'error', */
-    transitions: [{
-    name: 'opacity-transition',
-    leave(data) {
-      return gsap.to(data.current.container, {
-        opacity: 0
-      });
-    },
-    enter(data) {
-      return gsap.from(data.next.container, {
-        opacity: 0
-        
-      });
-    }
+	logLevel: 'error', */
+	debug: true,
+    transitions: [
+    {name: 'opacity-transition',
+    async leave(data) {
+        pageTransition();
+     },
+    async enter(data) {
+		contentAnimation();
+		console.log("enter",data.next.container);
+		
+    }   
   }],
-  views: [
+  /* views: [
     {
         namespace: 'home',
         afterEnter(data) {
@@ -40,11 +64,11 @@ barba.init({
             timer('.en');
         }
     }
-]
+] */
 });
-barba.hooks.afterEnter((data) => {
+/* barba.hooks.afterEnter((data) => {
     updateline()
-});
+}); */
 console.log('barba');
 
 
