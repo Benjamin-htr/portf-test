@@ -1,6 +1,6 @@
 function initSign() {
     if (document.querySelector(".sign-container")) {
-        document.querySelector(".active").click();
+        window.location.reload();
         console.log("sign-container exist !");
     }
 }
@@ -72,7 +72,6 @@ barba.init({
         console.log("enter",data.next.container);
         updateline();
         initSign();
-		
     }   
   }],
   

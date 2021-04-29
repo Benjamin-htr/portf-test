@@ -88,6 +88,10 @@ function setup() {
     var ropeD = Composites.stack(right, topVal, 13, 1, 10, 10, function(x, y) {
         return Bodies.rectangle(right, y, 50, 20, { collisionFilter: { group: group }, chamfer: 5 });
     });
+    var first= 'first';
+    /* ropeD.bodies[0].collisionFilter.mask = first;
+    ropeD.bodies[1].collisionFilter.mask = first; */
+    
 
     Composites.chain(ropeD, 0.3, 0, -0.3, 0, { stiffness: 1, length: 0 });
     Composite.add(ropeD, Constraint.create({
@@ -137,7 +141,8 @@ function setup() {
 
 
     // add mouse control
-    var mouse = Mouse.create(render.canvas.elt),
+    if (width > 600) {
+        var mouse = Mouse.create(render.canvas.elt),
         mouseConstraint = MouseConstraint.create(engine, {
             mouse: mouse,
             constraint: {
@@ -149,12 +154,15 @@ function setup() {
         });
         mouseConstraint.mouse.element.removeEventListener("mousewheel", mouseConstraint.mouse.mousewheel);
         mouseConstraint.mouse.element.removeEventListener("DOMMouseScroll", mouseConstraint.mouse.mousewheel);
+        mouseConstraint.collisionFilter.mask = group;
         mouse.pixelRatio = 1;
 
-    Composite.add(world, mouseConstraint);
+        Composite.add(world, mouseConstraint);
 
-    // keep the mouse in sync with rendering
-    render.mouse = mouse;
+        // keep the mouse in sync with rendering
+        render.mouse = mouse;
+    }
+    
 
     // fit the render viewport to the scene
     /*  Render.lookAt(render, {

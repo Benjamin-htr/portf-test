@@ -143,13 +143,13 @@ header {
 @media only screen and (max-width: 600px) {
     .btn-back {
         display: flex;
-        
-        
+        z-index : 3;
     }
     .btn-burger {
         display: flex;
-        z-index: 2;
+        z-index: 4;
     }
+
     .btn-burger .bar {
         background-color: rgb(162, 213, 198);
     }
