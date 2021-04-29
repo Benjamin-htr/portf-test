@@ -1,5 +1,5 @@
 .content {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .sign-container canvas {
