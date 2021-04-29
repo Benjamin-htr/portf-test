@@ -201,6 +201,7 @@ addEventListener("load", function () {
             if (document.querySelector('header .menu_begin') === null) {
                 addImg();
                 
+                
             }
             
             
@@ -226,7 +227,9 @@ addEventListener("load", function () {
                 let bool = burger.classList.contains('active');
                 burger.classList.toggle('active');
                 let header = document.querySelector('header');
-                bool ? header.style.display = "none" : header.style.display = "flex";
+                /* bool ? header.style.display = "none" : header.style.display = "flex"; */
+                header.classList.toggle("header-active");
+                
                 
                 if (!bool) {
                     updateline();
@@ -258,10 +261,12 @@ function addImg() {
         statut.textContent = "Développeur web / logiciel";
         div.appendChild(statut);
 
+
         header.insertBefore(div, header.firstChild);
         let burger = document.querySelector('.btn-burger');
         let bool = burger.classList.contains('active');
-        !bool ? header.style.display = "none" : header.style.display = "flex";
+        /* !bool ? header.style.display = "none" : header.style.display = "flex"; */
+    
 
     }
     

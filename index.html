@@ -21,8 +21,11 @@
         <meta name="twitter:title" content="Benjamin Hautier - WebSite">
         <meta name="twitter:image" content="https://benjamin-htr.github.io/assets/logo1200.png">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" href="./style.css" type="text/css">
+        <link rel="stylesheet" href="./navbar.css" type="text/css">
         <link rel="stylesheet" href="./timer.css" type="text/css">
+        <link rel="stylesheet" href="./loading.css" type="text/css">
+        <link rel="stylesheet" href="./home.css" type="text/css">
+
         <link rel="icon" type="image/png" href="./assets/icon.png" sizes="32x32"/>
         
         
@@ -33,7 +36,7 @@
             <span class="bar bar--1"></span>
             <span class="bar bar--2"></span>
         </button>
-        <header hidden="true" id="scrolling">
+        <header id="scrolling">
             <div class="nav_container">
                 <nav class="languages_ch">
                     <a href="./index.en.html" data-text='EN'>EN</a>
@@ -42,9 +45,11 @@
                 </nav>
                 <nav class="pages_ch">
                     <div class ="box">
+                        <!-- <a href="./index.en.html" data-text='EN'>EN</a> -->
                         <span data-text='ACCUEIL' class = "active">ACCUEIL</span>
                     </div>
                     <div class ="box">
+                        <!-- <a href="./index.html" data-text='FR' class="active">FR</a> -->
                         <span data-text='MOI'>MOI</span>
                     </div>
                     <div class ="box">
@@ -68,32 +73,34 @@
             
         </header>
         <div class="load-container">
-            <div class="loading-screen"></div>
+            <div class="loading-screen">
+                <img src="./assets/logo.svg">
+                <div class="name-loading">Benjamin</div>
+                Benjamin is working
+                <div class="loading">
+                    <div class="first"></div>
+                    <div class="second"></div>
+                    <div class="third"></div>
+                </div>
+            </div> 
         </div>
         <main data-barba="container" data-barba-namespace="home">
              <!-- put here the content you wish to change
             between your pages, like your main content <h1> or <p> --> 
                 <div class = "content" >
-                    <p class="animate-this">Work in Progress ...</p>
-                    <div class="deconstructed">
-                        New content in :
-                        <div>New content in :</div>
-                        <div>New content in :</div>
-                        <div>New content in :</div>
-                        <div>New content in :</div>
-                      </div>
-                    <p class = "timer fr" data-date="Apr 19, 2021 00:00:00"></p>
-                    <p class = "animate-this">Meanwhile you can visit my other media :</p>
-                    <p class = "social-media1">
-                        <a href="https://www.linkedin.com/in/benjamin-hautier/">
-                            <img src = "./assets/linkedin.svg">
-                        </a>
-                            
-                        <a href="https://github.com/Benjamin-htr">
-                            <img src = "./assets/github.svg">
-                        </a>
-                       
-                    </p>
+                    <div class="sign-container"></div>
+                    <div class="main-logo">
+                        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 35.500">
+                            <g font-weight="400" font-family="Magneto" stroke-width=".265">
+                                <g aria-label="B" style="line-height:1.25;-inkscape-font-specification:Magneto" font-size="50.8">
+                                    <path class="path" style="-inkscape-font-specification:Magneto;mix-blend-mode:normal" d="M43.223 17.68c2.953.515 4.448 1.893 5.39 2.72 1.588 1.373 2.382 2.96 2.382 4.762 0 2.547-1.943 3.82-5.83 3.82h-29.02l3.82 6.251H48.91c3.804 0 6.656-.512 8.558-1.538 2.332-1.256 3.497-3.348 3.497-6.275 0-2.431-1.281-4.705-3.844-6.822-1.538-1.273-3.878-2.678-7.02-4.216 1.273-2.2 1.91-4.192 1.91-5.978 0-3.688-2.381-6.416-7.144-8.186C41.462.961 37.493.333 32.962.333H20.063l5.024 14.276H11.299l1.037 2.948h13.788l2.894 8.226h8.93c-1.27-3.58-2.894-8.227-2.894-8.227s4.79-.61 8.169.124zM30.333 4.302h1.265c2.894 0 5.34.33 7.342.992 2.96 1.009 4.577 2.56 4.44 4.936-.124 2.134-1.516 3.192-2.212 3.638-1.489 1.076-7.151.741-7.151.741s-2.415-6.727-3.684-10.307z" fill="#5c3c92"/>
+                                    <path class="path" style="line-height:1.25;-inkscape-font-specification:Magneto" d="M0 0l8.954 25.45h5.516L5.515 0z" fill="#5c3c92"/>
+                                    <path class="path" style="line-height:1.25;-inkscape-font-specification:Magneto;mix-blend-mode:normal" d="M46.193 17.68c2.953.516 4.449 1.894 5.391 2.72 1.588 1.373 2.381 2.96 2.381 4.763 0 2.547-1.943 3.82-5.829 3.82H19.115l3.82 6.25h28.947c3.803 0 6.656-.512 8.557-1.537 2.332-1.257 3.498-3.349 3.498-6.276 0-2.43-1.282-4.704-3.845-6.821-1.538-1.273-3.878-2.679-7.02-4.217 1.274-2.2 1.91-4.192 1.91-5.978 0-3.687-2.38-6.416-7.143-8.185C44.432.962 40.463.333 35.932.333H23.034l5.023 14.277H14.27l1.037 2.947h13.787l2.894 8.226h8.93c-1.27-3.58-2.894-8.226-2.894-8.226s4.791-.61 8.17.123zM33.303 4.302h1.265c2.894 0 5.341.33 7.342.992 2.96 1.01 4.578 2.56 4.44 4.937-.123 2.133-1.516 3.191-2.211 3.638-1.49 1.075-7.152.74-7.152.74s-2.415-6.727-3.684-10.307z" fill="#d72631"/>
+                                    <path class="path" style="line-height:1.25;-inkscape-font-specification:Magneto" d="M2.97 0l8.955 25.45h5.515L8.486 0z" fill="#d72631"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
                 <div class="content2 animate-this">
                     FRANCAIS
@@ -105,6 +112,14 @@
         <script src="./js/navbar.js" async='true'></script>
         <script src="./js/timer.js" async='true'></script>
         <script src="./js/anim.js" async='true'></script>
+        <script src="./js/libs/matter.min.js"></script>
+        <script src="js/libs/render.js"></script>
+        <script src="js/libs/p5.min.js"></script>
+        <script src="./js/chains2.js"></script>
+
+        
+        
+
         
     
     </body>

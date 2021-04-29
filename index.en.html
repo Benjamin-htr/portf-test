@@ -21,8 +21,9 @@
         <meta name="twitter:title" content="Benjamin Hautier - WebSite">
         <meta name="twitter:image" content="https://benjamin-htr.github.io/assets/logo1200.png">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" href="./style.css" type="text/css">
+        <link rel="stylesheet" href="./navbar.css" type="text/css">
         <link rel="stylesheet" href="./timer.css" type="text/css">
+        <link rel="stylesheet" href="./loading.css" type="text/css">
         <link rel="icon" type="image/png" href="./assets/icon.png" sizes="32x32"/>
 
         
@@ -34,7 +35,7 @@
             <span class="bar bar--1"></span>
             <span class="bar bar--2"></span>
         </button>
-        <header hidden="true" id="scrolling">
+        <header id="scrolling">
             <div class="nav_container">
                 <nav class="languages_ch">
                     <a href="./index.en.html" data-text='EN'  class="active">EN</a>
@@ -44,16 +45,18 @@
                 </nav>
                 <nav class="pages_ch">
                     <div class ="box">
-                        <span data-text='ACCUEIL' class = "active">ACCUEIL</span>
+                        <!-- <a href="./index.en.html" data-text='EN' class="active">EN</a> -->
+                        <span data-text='HOME' class = "active">HOME</span>
                     </div>
                     <div class ="box">
-                        <span data-text='MOI'>MOI</span>
+                        <!-- <a href="./index.html" data-text='FR'>FR</a> -->
+                        <span data-text='ME'>ME</span>
                     </div>
                     <div class ="box">
-                        <span data-text='MES COMPÉTENCES'>MES COMPÉTENCES</span>
+                        <span data-text='MY SKILLS'>MY SKILLS</span>
                     </div>
                     <div class ="box">
-                        <span data-text='MES PROJETS'>MES PROJETS</span>
+                        <span data-text='MY PROJECTS'>MY PROJECTS</span>
                     </div>
                     <div class ="box">
                         <span data-text='CONTACT'>CONTACT</span>
@@ -70,23 +73,33 @@
             
         </header>
         <div class="load-container">
-            <div class="loading-screen"></div>
+            <div class="loading-screen">
+                <img src="./assets/logo.svg">
+                <div class="name-loading">Benjamin</div>
+                Benjamin is working
+                <div class="loading">
+                    <div class="first"></div>
+                    <div class="second"></div>
+                    <div class="third"></div>
+                </div>
+                
+            </div>
         </div>
         <main data-barba="container" data-barba-namespace="home-en">
             <!-- put here the content you wish to change
             between your pages, like your main content <h1> or <p> -->
                 <div class = "content">
                     <p class = "animate-this">Work in Progress ...</p>
-                    <div class="deconstructed">
+                    <div class="deconstructed animate-this">
                         New content in :
                         <div>New content in :</div>
                         <div>New content in :</div>
                         <div>New content in :</div>
                         <div>New content in :</div>
                       </div>
-                    <p class = "timer en" data-date="Apr 19, 2021 00:00:00"></p>
+                    <p class = "timer en animate-this" data-date="Apr 26, 2021 00:00:00"></p>
                     <p class = "animate-this">Meanwhile you can visit my other media :</p>
-                    <p class = "social-media1">
+                    <p class = "social-media1 animate-this">
                         <a href="https://www.linkedin.com/in/benjamin-hautier/">
                             <img src = "./assets/linkedin.svg">
                         </a>
