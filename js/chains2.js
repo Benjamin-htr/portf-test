@@ -59,15 +59,35 @@ function setup() {
     var runner = Runner.create();
     Runner.run(runner, engine);
 
+    var left;
+    var right;
+    var topVal;
+    var longueur;
+    if (w < 600) {
 
-    var left = 0;
-    var right = vwp.width-50;
+        left = 0;
+        right = vwp.width-50;
 
-    let topVal = 0;
+        topVal = 0;
 
-    var longueur = right - left;
+        longueur = right - left;
+        console.log("left : ", left,"right : ", right, "topval : ", topVal,"longueur : ", longueur)
+    }
+    else if (w >= 600 ) {
+        console.log('ici else');
+
+        left = w/4;
+        right = w-left;
+
+        topVal = 0;
+        longueur = right - left;
+        console.log("left : ", left,"right : ", right, "topval : ", topVal,"longueur : ", longueur)
+    }
+    
+
+
+    
     // add bodies
-
     group = Body.nextGroup(true);
     var ropeC = Composites.stack(left, topVal, 13, 1, 10, 10, function(x, y) {
         return Bodies.rectangle(left, y, 50, 20, { collisionFilter: { group: group }, chamfer: 5 });
@@ -109,7 +129,7 @@ function setup() {
                 },
     });
     bodies = rect;
-
+    console.log("bodies setup : ", rect);
 
     var constraintLeft = Constraint.create({ 
         bodyB: rect,
@@ -175,8 +195,8 @@ function setup() {
     myCanvas.remove();
     var container = document.querySelector('.sign-container');
     container.appendChild(myCanvas);
-
-
+    frameRate(60);
+   
 }
 
 function draw() {
@@ -188,6 +208,8 @@ function draw() {
     /* fill("#0EFF00");
     circle(mouseX, mouseY, 40); */
 
+    var test = document.querySelector(".active");
+    /* console.log("bodies draw : ", bodies); */
 
     var circleL = bodies;
     var pos = circleL.position;
@@ -225,9 +247,16 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight, false);
 }
 
-/* function reclick() {
+function reclick() {
     document.querySelector(".active").click();
     console.log("reclick");
 }
 
- */
+
+
+ function reset() {
+    var myCanvastoSuppr = document.querySelector(".p5Canvas");
+    if(myCanvastoSuppr) {
+        myCanvastoSuppr.remove();
+    }
+ }
