@@ -139,6 +139,7 @@ barba.init({
             timer('.en');
         },
     }
+
 ]
 });
 barba.hooks.afterEnter((data) => {
@@ -152,17 +153,17 @@ console.log('barba');
 
 function refreshLink() {
     var value = document.querySelector("main").getAttribute("data-barba-namespace");
-    console.log("value :", value);
+    /* console.log("value :", value); */
 
     var en = document.querySelector(".languages_ch a:nth-child(1)");
-    console.log("en : ",en);
+    /* console.log("en : ",en); */
     var fr = document.querySelector(".languages_ch a:nth-child(2)");
-    console.log("fr : ",fr);
+    /* console.log("fr : ",fr); */
 
     var home = document.querySelector(".pages_ch a:nth-child(1)");
-    console.log("home : ",home);
+    /* console.log("home : ",home); */
     var me = document.querySelector(".pages_ch .box:nth-child(2) a");
-    console.log("me : ",me);
+    /* console.log("me : ",me); */
     var skills = document.querySelector(".pages_ch .box:nth-child(3) a");
     projects = document.querySelector(".pages_ch .box:nth-child(4) a");
     var contact = document.querySelector(".pages_ch .box:nth-child(5) a");
@@ -204,7 +205,7 @@ function refreshLink() {
         en.href="./skills.en.html";
         fr.href="./skills.fr.html";
 
-        home.href="../../index.html";
+        home.href="../../index.en.html";
         me.href="../../pages/skills/skills.en.html";
         skills.href="../../pages/skills/skills.en.html";
         projects.href="../../pages/skills/skills.en.html";

@@ -78,7 +78,7 @@ function setup() {
         left = 0;
         right = vwp.width-50;
 
-        topVal = -50;
+        topVal = 0;
 
         longueur = right - left;
         console.log("left : ", left,"right : ", right, "topval : ", topVal,"longueur : ", longueur)
@@ -86,7 +86,7 @@ function setup() {
         number = 15;
         nb2 = number+2;
 
-        longPartRope = (vwp.height*1.1)/number;
+        longPartRope = (vwp.height/1.05)/number;
         largPartRope = longPartRope/3;
     }
     else if (w >= 600 ) {
@@ -102,7 +102,7 @@ function setup() {
         number = 15;
         nb2=number;
 
-        longPartRope = (vwp.height)/number;
+        longPartRope = (vwp.height*1.15)/number;
         largPartRope = longPartRope/3;
     }
     
