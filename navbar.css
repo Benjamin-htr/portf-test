@@ -175,14 +175,14 @@ header {
         transition: all 1s;
         opacity: 0.85;
         
-}
+    }
     .header-active {
         width: 100vw;
         height: 100vh;
         opacity: 1;
         
     
-}
+    }
     
     #scrolling {
         overflow: auto;

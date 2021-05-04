@@ -15,6 +15,7 @@ var Engine = Matter.Engine,
         Bodies = Matter.Bodies;
 
 var bodies;
+var message;
 
 var w = window.innerWidth;
 var h = window.innerHeight; 
@@ -26,6 +27,8 @@ function setup() {
     //création du canvas avec p5.js :
     canvas = createCanvas(w, h);
     canvas.parent()
+
+    message = document.querySelector(".sign-container").dataset.mess;
 
     // create engine
     var engine = Engine.create(),
@@ -59,6 +62,13 @@ function setup() {
     var runner = Runner.create();
     Runner.run(runner, engine);
 
+    var chainsColor = '#918369';
+    var constraintStyle = {
+        visible: false,
+        /* lineWidth: 1,
+        strokeStyle: 'black', */
+    }
+
     var left;
     var right;
     var topVal;
@@ -68,10 +78,13 @@ function setup() {
         left = 0;
         right = vwp.width-50;
 
-        topVal = 0;
+        topVal = -50;
 
         longueur = right - left;
         console.log("left : ", left,"right : ", right, "topval : ", topVal,"longueur : ", longueur)
+
+        number = 17;
+        nb2 = number+2;
     }
     else if (w >= 600 ) {
         console.log('ici else');
@@ -82,6 +95,9 @@ function setup() {
         topVal = 0;
         longueur = right - left;
         console.log("left : ", left,"right : ", right, "topval : ", topVal,"longueur : ", longueur)
+
+        number = 15;
+        nb2=number;
     }
     
 
@@ -89,31 +105,36 @@ function setup() {
     
     // add bodies
     group = Body.nextGroup(true);
-    var ropeC = Composites.stack(left, topVal, 13, 1, 10, 10, function(x, y) {
-        return Bodies.rectangle(left, y, 50, 20, { collisionFilter: { group: group }, chamfer: 5 });
+    var ropeC = Composites.stack(left, topVal, number, 1, 10, 10, function(x, y) {
+        return Bodies.rectangle(left, y, 50, 15, { collisionFilter: { group: group }, chamfer: 5, 
+            render: {   fillStyle: chainsColor, strokeStyle: "transparent", lineWidth : 1}
+        , });
     });
 
 
 
-    Composites.chain(ropeC, 0.3, 0, -0.3, 0, { stiffness: 1, length: 0 });
+    Composites.chain(ropeC, 0.3, 0, -0.3, 0, { stiffness: 1, length: 0, render: constraintStyle});
     Composite.add(ropeC, Constraint.create({
         bodyB: ropeC.bodies[0],
         pointB: { x: -20, y: 0 },
         pointA: { x: ropeC.bodies[0].position.x, y: ropeC.bodies[0].position.y },
         stiffness: 1,
         length : 0,
+    
     }));
 
-
-    var ropeD = Composites.stack(right, topVal, 13, 1, 10, 10, function(x, y) {
-        return Bodies.rectangle(right, y, 50, 20, { collisionFilter: { group: group }, chamfer: 5 });
+    
+    var ropeD = Composites.stack(right, topVal, nb2, 1, 10, 10, function(x, y) {
+        return Bodies.rectangle(right, y, 50, 15, { collisionFilter: { group: group }, chamfer: 5,
+            render: {   fillStyle: chainsColor, strokeStyle: "transparent", lineWidth : 1} 
+        });
     });
     var first= 'first';
     /* ropeD.bodies[0].collisionFilter.mask = first;
     ropeD.bodies[1].collisionFilter.mask = first; */
     
 
-    Composites.chain(ropeD, 0.3, 0, -0.3, 0, { stiffness: 1, length: 0 });
+    Composites.chain(ropeD, 0.3, 0, -0.3, 0, { stiffness: 1, length: 0, render: constraintStyle });
     Composite.add(ropeD, Constraint.create({
         bodyB: ropeD.bodies[0],
         pointB: { x: -20, y: 0 },
@@ -122,9 +143,9 @@ function setup() {
         length : 0,
     }));
 
-    var rect = Bodies.rectangle((vwp.width/2), 150, longueur, 70, { collisionFilter: { group: group }, 
+    var rect = Bodies.rectangle((vwp.width/2), 150, longueur, 80, { collisionFilter: { group: group }, chamfer: 2.5, 
         /* isStatic : true, */
-        render: {   fillStyle: "transparent", strokeStyle: "white", lineWidth : 1,
+        render: {   fillStyle: "#635f5f", strokeStyle: "black", lineWidth : 0.7,
                     
                 },
     });
@@ -134,19 +155,21 @@ function setup() {
     var constraintLeft = Constraint.create({ 
         bodyB: rect,
         pointB: { x: -(longueur/2), y: -10 },
-        bodyA : ropeC.bodies[12],
+        bodyA : ropeC.bodies[number-1],
         pointA: {x : 20, y : 0},
         stiffness: 1,
         length : 0,
+        /* render: constraintStyle */
     });
 
     var constraintRight = Constraint.create({ 
         bodyB: rect,
         pointB: { x: (longueur/2), y: -10 },
-        bodyA : ropeD.bodies[12],
+        bodyA : ropeD.bodies[nb2-1],
         pointA: {x : 20, y : 0},
         stiffness: 1,
         length : 0,
+        /* render: constraintStyle */
     });
 
 
@@ -159,7 +182,6 @@ function setup() {
         constraintRight,
     ]);
 
-
     // add mouse control
     if (width > 600) {
         var mouse = Mouse.create(render.canvas.elt),
@@ -168,7 +190,8 @@ function setup() {
             constraint: {
                 stiffness: 0.2,
                 render: {
-                    visible: true
+                    /* visible: true */
+                    strokeStyle: "#077b8a"
                 }
             }
         });
@@ -197,6 +220,7 @@ function setup() {
     container.appendChild(myCanvas);
     frameRate(60);
    
+    
 }
 
 function draw() {
@@ -218,11 +242,13 @@ function draw() {
 
     /* console.log(circleL); */
     
-    var fontSize = 38;
+    var fontSize = 46;
     
     textSize(fontSize);
   
-    var txt1 = "Welcome"
+    textFont('Arial');
+    
+    var txt1 = message;
     var wordWith = textWidth(txt1);
         
     push();
@@ -236,8 +262,8 @@ function draw() {
     rect(0, 0, wordWith, fontSize);   */   
   
     // set text
-    fill(255);
-    textAlign(CENTER);
+    fill(162, 213, 198);
+    textAlign(CENTER, BOTTOM);
     text(txt1, 0, fontSize / 2);
     
     pop();
