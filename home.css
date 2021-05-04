@@ -1,5 +1,25 @@
+body {
+    height : 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    top : 0px;
+    
+}
+
 .content {
     overflow: hidden;
+    display : flex;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    z-index: 1;
+    
+    
+    
+    
 }
 
 .sign-container {

@@ -16,7 +16,7 @@ var scripList = [/* "./js/libs/matter.min.js",
 
 function reloadwindow() {
     value = document.querySelector("main").getAttribute("data-barba-namespace");
-    console.log("value : ", value);
+    console.log("value reload : ", value);
     if (value === "home") {
         window.location.reload();
     }
@@ -78,6 +78,8 @@ function pageTransition() {
     });
     tl.set(".load-container", {display : "none"});
     tl.call(reloadwindow);
+    tl.call( refreshLink);
+    
     
     
     
@@ -114,6 +116,7 @@ barba.init({
 		contentAnimation();
         console.log("enter",data.next.container);
         updateline();
+       
         
 
     }   
@@ -139,11 +142,74 @@ barba.init({
 ]
 });
 barba.hooks.afterEnter((data) => {
-    /* updateline() */
+    updateline();
+    
 });
 console.log('barba');
 
 
 
 
+function refreshLink() {
+    var value = document.querySelector("main").getAttribute("data-barba-namespace");
+    console.log("value :", value);
 
+    var en = document.querySelector(".languages_ch a:nth-child(1)");
+    console.log("en : ",en);
+    var fr = document.querySelector(".languages_ch a:nth-child(2)");
+    console.log("fr : ",fr);
+
+    var home = document.querySelector(".pages_ch a:nth-child(1)");
+    console.log("home : ",home);
+    var me = document.querySelector(".pages_ch .box:nth-child(2) a");
+    console.log("me : ",me);
+    var skills = document.querySelector(".pages_ch .box:nth-child(3) a");
+    projects = document.querySelector(".pages_ch .box:nth-child(4) a");
+    var contact = document.querySelector(".pages_ch .box:nth-child(5) a");
+
+    if (value === "home") {
+        en.href="./index.en.html";
+        fr.href="./index.html";
+
+        home.href="./index.html";
+        me.href="./pages/skills/skills.fr.html";
+        skills.href="./pages/skills/skills.fr.html";
+        projects.href="./pages/skills/skills.fr.html";
+        contact.href="./pages/skills/skills.fr.html";
+
+    }
+    else if (value === "home-en") {
+        en.href="./index.en.html";
+        fr.href="./index.html";
+
+        home.href="./index.en.html";
+        me.href="./pages/skills/skills.en.html";
+        skills.href="./pages/skills/skills.en.html";
+        projects.href="./pages/skills/skills.en.html";
+        contact.href="./pages/skills/skills.en.html";
+    }
+
+    else if (value === "skills") {
+        en.href="./skills.en.html";
+        fr.href="./skills.fr.html";
+
+        home.href="../../index.html";
+        me.href="../../pages/skills/skills.fr.html";
+        skills.href="../../pages/skills/skills.fr.html";
+        projects.href="../../pages/skills/skills.fr.html";
+        contact.href="../../pages/skills/skills.fr.html";
+
+    }
+    else if (value === "skills-en") {
+        en.href="./skills.en.html";
+        fr.href="./skills.fr.html";
+
+        home.href="../../index.html";
+        me.href="../../pages/skills/skills.en.html";
+        skills.href="../../pages/skills/skills.en.html";
+        projects.href="../../pages/skills/skills.en.html";
+        contact.href="../../pages/skills/skills.en.html";
+
+    }
+
+}

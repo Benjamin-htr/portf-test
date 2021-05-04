@@ -3,10 +3,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./skills.css">
-    <link rel="icon" type="image/png" href="../../assets/icon.png" />
+    <link rel="icon" type="image/png" href="../../assets/icon.png" sizes="32x32"/>
     <title>Page des compétences</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../../navbar.css" type="text/css">
+    <link rel="stylesheet" href="../../timer.css" type="text/css">
+    <link rel="stylesheet" href="../../loading.css" type="text/css">
+    <link rel="stylesheet" href="../../home.css" type="text/css">
 </head>
-<body>
-    <h1>Compétence fonctionne !</h1>
+<body data-barba="wrapper">
+    <div class="btn-back"></div>
+    <button class="btn-burger">
+        <span class="bar bar--1"></span>
+        <span class="bar bar--2"></span>
+    </button>
+    <header id="scrolling">
+        <div class="nav_container">
+            <nav class="languages_ch">
+                <a href="./skills.en.html" data-text='EN'>EN</a>
+                <!-- <span data-text='EN'>EN</span> -->
+                <a href="./skills.fr.html" data-text='FR' class="active">FR</a>
+                <!-- <span data-text='FR' class = "active">FR</span> -->
+            </nav>
+            <nav class="pages_ch">
+                <div class ="box">
+                    <!-- <span data-text='ACCUEIL' class = "active">ACCUEIL</span> -->
+                    <a href="../../index.html" data-text='ACCUEIL'>ACCUEIL</a>
+                </div>
+                <div class ="box">
+                    <!-- <span data-text='MOI'>MOI</span> -->
+                    <a href="../../pages/skills/skills.fr.html" data-text='MOI'>MOI</a>
+                </div>
+                <div class ="box">
+                    <!-- <span data-text='MES COMPÉTENCES'>MES COMPÉTENCES</span> -->
+                    <a href="../../pages/skills/skills.fr.html" data-text='MES COMPÉTENCES' class = "active">MES COMPÉTENCES</a>
+                </div>
+                <div class ="box">
+                    <!-- <span data-text='MES PROJETS'>MES PROJETS</span> -->
+                    <a href="../../pages/skills/skills.fr.html" data-text='MES PROJETS'>MES PROJETS</a>
+                </div>
+                <div class ="box">
+                    <!-- <span data-text='CONTACT'>CONTACT</span> -->
+                    <a href="../../pages/skills/skills.fr.html" data-text='CONTACT'>CONTACT</a>
+                </div>
+            </nav>
+        </div>
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/benjamin-hautier/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62"><path d="M54.572 0H5.427A5.428 5.428 0 000 5.428v49.145A5.428 5.428 0 005.428 60h49.145A5.428 5.428 0 0060 54.572V5.425A5.428 5.428 0 0054.572 0zM18.567 51.807a1.58 1.58 0 01-1.58 1.58h-6.725a1.58 1.58 0 01-1.577-1.58V23.625c0-.873.708-1.577 1.577-1.577h6.726c.872 0 1.58.705 1.58 1.577zm-4.942-32.42a6.388 6.388 0 110-12.775 6.388 6.388 0 010 12.775zm40.078 32.55a1.452 1.452 0 01-1.45 1.45h-7.218a1.452 1.452 0 01-1.45-1.45V38.715c0-1.972.575-8.643-5.155-8.643-4.448 0-5.35 4.566-5.53 6.616v15.25a1.45 1.45 0 01-1.45 1.45h-6.983a1.452 1.452 0 01-1.45-1.45V23.495a1.452 1.452 0 011.45-1.452h6.978a1.452 1.452 0 011.452 1.45v2.46c1.65-2.475 4.1-4.385 9.318-4.385 11.55 0 11.485 10.795 11.485 16.725z"/></svg>                    
+            <a href="https://github.com/Benjamin-htr">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62"><path d="M30 0C13.435 0 0 13.772 0 30.758c0 13.59 8.595 25.12 20.517 29.188 1.498.284 1.983-.67 1.983-1.48V52.74c-8.345 1.861-10.082-3.63-10.082-3.63-1.365-3.554-3.333-4.5-3.333-4.5-2.723-1.91.207-1.869.207-1.869 3.013.216 4.598 3.171 4.598 3.171 2.675 4.701 7.018 3.342 8.73 2.556.268-1.987 1.045-3.345 1.905-4.112-6.662-.782-13.667-3.42-13.667-15.202 0-3.36 1.172-6.103 3.09-8.256-.31-.777-1.338-3.907.292-8.14 0 0 2.52-.826 8.253 3.152A28.773 29.5 0 0130 14.874c2.55.013 5.117.354 7.515 1.036 5.728-3.978 8.242-3.153 8.242-3.153 1.633 4.237.606 7.367.296 8.14 1.925 2.154 3.087 4.9 3.087 8.257 0 11.814-7.018 14.415-13.697 15.177 1.075.953 2.057 2.824 2.057 5.695v8.44c0 .818.48 1.78 2.002 1.477C51.415 55.87 60 44.343 60 30.758 60 13.772 46.568 0 30 0z"/></svg>                
+            </a>
+        </div>
+        
+    </header>
+    <div class="load-container">
+        <div class="loading-screen">
+            <img src="../../assets/logo.svg">
+            <div class="name-loading">Benjamin</div>
+            Benjamin is working
+            <div class="loading">
+                <div class="first"></div>
+                <div class="second"></div>
+                <div class="third"></div>
+            </div>
+            
+        </div>
+    </div>
+    <main data-barba="container" data-barba-namespace="skills">
+        <!-- put here the content you wish to change
+        between your pages, like your main content <h1> or <p> -->
+            <div class = "content-timer">
+                <p class = "animate-this">Work in Progress ...</p>
+                <div class="deconstructed animate-this">
+                    New content in :
+                    <div>New content in :</div>
+                    <div>New content in :</div>
+                    <div>New content in :</div>
+                    <div>New content in :</div>
+                  </div>
+                <p class = "timer en animate-this" data-date="Apr 26, 2021 00:00:00"></p>
+                <p class = "animate-this">Meanwhile you can visit my other media :</p>
+                <p class = "social-media1 animate-this">
+                    <a href="https://www.linkedin.com/in/benjamin-hautier/">
+                        <img src = "../../assets/linkedin.svg">
+                    </a>
+                        
+                    <a href="https://github.com/Benjamin-htr">
+                        <img src = "../../assets/github.svg">
+                    </a>
+                   
+                </p>
+            </div>
+            <div class="content2 animate-this">
+                SKILLS FR
+            </div>
+    </main>
+    <script src="../../js/libs/gsap.min.js"></script>
+    <script src="../../js/libs/barba.umd.js "></script>
+    <script src="../../js/libs/barba-router.umd.js"></script>
+    <script src="../../js/navbar.js" async='true'></script>
+    <script src="../../js/timer.js" async='true'></script>
+    <script src="../../js/anim.js" async='true'></script>
+    
+    
 </body>
 </html>

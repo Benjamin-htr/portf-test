@@ -10,7 +10,7 @@ body {
     height : 50%;
     top : 0px;
 } */
-.content {
+.content-timer {
     display : flex;
     /* margin-top: 30%; */
     
@@ -28,12 +28,12 @@ body {
     font-weight: 700;
 }
 
-.content p {
+.content-timer p {
     margin-top: 7.5px;
     margin-bottom: 7.5px;
     text-shadow: 1px 1px 2px black;
 }
-.content .timer {
+.content-timer .timer {
     font-family: 'Share Tech Mono', monospace;
     color: #ffffff;
     color: rgba(7, 123, 138, 1);
@@ -45,11 +45,11 @@ body {
 }
 
 
-.content a img {
+.content-timer a img {
     height : 40px;
 }
 
-.content a:link {
+.content-timer a:link {
     text-decoration:none; 
 }
 

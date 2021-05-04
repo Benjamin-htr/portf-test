@@ -29,7 +29,7 @@ addEventListener("load", function () {
     updateline()
 
 
-    let spans2 = document.querySelectorAll('header .pages_ch span')
+    let spans2 = document.querySelectorAll('header .pages_ch a')
     let nav2 = document.querySelector('.pages_ch')
     let line2 = document.querySelector('header .pages_ch .line')
 
@@ -294,6 +294,7 @@ function updateline() {
         console.log('update')
     };
 }
+
 
 
 
