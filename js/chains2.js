@@ -83,8 +83,11 @@ function setup() {
         longueur = right - left;
         console.log("left : ", left,"right : ", right, "topval : ", topVal,"longueur : ", longueur)
 
-        number = 17;
+        number = 15;
         nb2 = number+2;
+
+        longPartRope = (vwp.height)/number;
+        largPartRope = longPartRope/3;
     }
     else if (w >= 600 ) {
         console.log('ici else');
@@ -98,6 +101,9 @@ function setup() {
 
         number = 15;
         nb2=number;
+
+        longPartRope = (vwp.height)/number;
+        largPartRope = longPartRope/3;
     }
     
 
@@ -106,7 +112,7 @@ function setup() {
     // add bodies
     group = Body.nextGroup(true);
     var ropeC = Composites.stack(left, topVal, number, 1, 10, 10, function(x, y) {
-        return Bodies.rectangle(left, y, 50, 15, { collisionFilter: { group: group }, chamfer: 5, 
+        return Bodies.rectangle(left, y, longPartRope, 15, { collisionFilter: { group: group }, chamfer: 5, 
             render: {   fillStyle: chainsColor, strokeStyle: "transparent", lineWidth : 1}
         , });
     });
@@ -116,7 +122,7 @@ function setup() {
     Composites.chain(ropeC, 0.3, 0, -0.3, 0, { stiffness: 1, length: 0, render: constraintStyle});
     Composite.add(ropeC, Constraint.create({
         bodyB: ropeC.bodies[0],
-        pointB: { x: -20, y: 0 },
+        pointB: { x: -longPartRope/3, y: 0 },
         pointA: { x: ropeC.bodies[0].position.x, y: ropeC.bodies[0].position.y },
         stiffness: 1,
         length : 0,
@@ -125,7 +131,7 @@ function setup() {
 
     
     var ropeD = Composites.stack(right, topVal, nb2, 1, 10, 10, function(x, y) {
-        return Bodies.rectangle(right, y, 50, 15, { collisionFilter: { group: group }, chamfer: 5,
+        return Bodies.rectangle(right, y, longPartRope, 15, { collisionFilter: { group: group }, chamfer: 5,
             render: {   fillStyle: chainsColor, strokeStyle: "transparent", lineWidth : 1} 
         });
     });
@@ -137,7 +143,7 @@ function setup() {
     Composites.chain(ropeD, 0.3, 0, -0.3, 0, { stiffness: 1, length: 0, render: constraintStyle });
     Composite.add(ropeD, Constraint.create({
         bodyB: ropeD.bodies[0],
-        pointB: { x: -20, y: 0 },
+        pointB: { x: -longPartRope/3, y: 0 },
         pointA: { x: ropeD.bodies[0].position.x, y: ropeD.bodies[0].position.y },
         stiffness: 1,
         length : 0,
@@ -156,7 +162,7 @@ function setup() {
         bodyB: rect,
         pointB: { x: -(longueur/2), y: -10 },
         bodyA : ropeC.bodies[number-1],
-        pointA: {x : 20, y : 0},
+        pointA: {x : longPartRope/3, y : 0},
         stiffness: 1,
         length : 0,
         /* render: constraintStyle */
@@ -166,7 +172,7 @@ function setup() {
         bodyB: rect,
         pointB: { x: (longueur/2), y: -10 },
         bodyA : ropeD.bodies[nb2-1],
-        pointA: {x : 20, y : 0},
+        pointA: {x : longPartRope/3, y : 0},
         stiffness: 1,
         length : 0,
         /* render: constraintStyle */

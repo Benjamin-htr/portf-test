@@ -21,7 +21,7 @@
     flex-direction: column;
     top : 0px;
     z-index: -1;
-
+    max-height: 100vh;
 }
 .main-logo svg {
     width : 28vw;
