@@ -46,7 +46,7 @@ function contentAnimation() {
 	console.log('coucou')
   var tl = gsap.timeline();
   tl.from(".animate-this", { duration: 1, y: 30, opacity: 0, stagger: 0.2, delay: 0.1 });
-  tl.call(reloadwindow);
+
 }
 
 function delay(n) {
@@ -77,6 +77,8 @@ function pageTransition() {
         delay: 0.3,
     });
     tl.set(".load-container", {display : "none"});
+    tl.call(reloadwindow);
+    
     
     
 	
@@ -137,7 +139,7 @@ barba.init({
 ]
 });
 barba.hooks.afterEnter((data) => {
-    updateline()
+    /* updateline() */
 });
 console.log('barba');
 

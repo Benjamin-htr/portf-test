@@ -86,7 +86,7 @@ function setup() {
         number = 15;
         nb2 = number+2;
 
-        longPartRope = (vwp.height)/number;
+        longPartRope = (vwp.height*1.1)/number;
         largPartRope = longPartRope/3;
     }
     else if (w >= 600 ) {
