@@ -241,6 +241,9 @@ header {
         align-items: center;
         justify-content: start;
     }
+    header .pages_ch .active{
+        border-bottom: 2px solid #077b8a;
+    }
     header .pages_ch .line {
         visibility: hidden;
     }
@@ -332,9 +335,6 @@ header nav a, a:hover, a:focus, a:active {
     margin-right : 5px;
 }
 
-.content2 {
-    height : 30px;
-    padding-top: 6vh;
-}
+
 
 

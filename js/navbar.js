@@ -245,12 +245,20 @@ addEventListener("load", function () {
 
 function addImg() {
     if (window.matchMedia("(max-width: 600px)").matches && (document.querySelector('header .menu_begin') === null)) {
+        value = document.querySelector("main").getAttribute("data-barba-namespace");
+
+        var imgPath = "../../assets/logo.svg";
+
+        if (value ==="home" || value === "home-en") {
+            imgPath = './assets/logo.svg';
+        }
+        
         let header = document.querySelector('header');
         let div = document.createElement('div');
         div.classList.add('menu_begin');
         let logo = document.createElement('img');
         logo.classList.add('logo_menu');
-        logo.src = './assets/logo.svg';
+        logo.src = imgPath;
         div.appendChild(logo);
         let name = document.createElement('div');
         name.classList.add('name');
