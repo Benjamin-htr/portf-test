@@ -47,5 +47,19 @@ document.addEventListener('DOMContentLoaded',function(event){
         typeWriter(".present .line2", 0);
     });
     
+
+    TagCanvas.Start('myCanvas', 'tags', 
+    {
+      initial : 0.0025,
+      clickToFront : 500,
+      reverse : false,
+      minSpeed : 0.005,
+      wheelZoom : false,
+      textHeight : 35,
+      textColour: '#A2D5C6',
+      outlineMethod : "none",
+      depth: 0.8,
+      maxSpeed: 0.03,
+    });
     
   });
