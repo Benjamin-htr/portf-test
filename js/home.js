@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded',function(event){
       reverse : false,
       minSpeed : 0.005,
       wheelZoom : false,
-      textHeight : 35,
+      textHeight : 42,
       textColour: '#A2D5C6',
       outlineMethod : "none",
       depth: 0.8,

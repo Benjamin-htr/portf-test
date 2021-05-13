@@ -321,7 +321,7 @@ header nav a:hover:after {
     left: 100%;
 }
 
-header nav a, a:hover, a:focus, a:active {
+header nav a, header nav a:hover, header nav a:focus, header nav a:active {
     text-decoration: none;
     color: rgba(16, 16, 16, 0.0);
     -webkit-text-stroke: 1px rgba(162, 213, 198, 0.85);
