@@ -1024,6 +1024,10 @@ svg .path {
         height : 30vh;
         margin-bottom: 2%;
     }
+    .content4 .button3D ul li {
+        width: 130px;
+        height: 50px;
+    }
 
 	.content4 .right {
         width: auto;
